@@ -14,7 +14,7 @@
     "agent-browser": "./bin/agent-browser"
   },
   "scripts": {
-    "prepare": "husky",
+    "prepare": "husky || true",
     "version:sync": "node scripts/sync-version.js",
     "version": "npm run version:sync && git add cli/Cargo.toml",
     "build": "tsc",
