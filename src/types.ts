@@ -642,6 +642,11 @@ export interface InnerHtmlCommand extends BaseCommand {
   selector: string;
 }
 
+export interface OuterHtmlCommand extends BaseCommand {
+  action: 'outerhtml';
+  selector: string;
+}
+
 // Input value
 export interface InputValueCommand extends BaseCommand {
   action: 'inputvalue';
@@ -886,6 +891,7 @@ export type Command =
   | SelectAllCommand
   | InnerTextCommand
   | InnerHtmlCommand
+  | OuterHtmlCommand
   | InputValueCommand
   | SetValueCommand
   | DispatchEventCommand
