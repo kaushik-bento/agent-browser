@@ -596,7 +596,7 @@ pub fn parse_command(args: &[String], flags: &Flags) -> Result<Value, ParseError
 }
 
 fn parse_get(rest: &[&str], id: &str) -> Result<Value, ParseError> {
-    const VALID: &[&str] = &["text", "html", "value", "attr", "url", "title", "count", "box", "styles"];
+    const VALID: &[&str] = &["text", "html", "outerhtml", "value", "attr", "url", "title", "count", "box", "styles"];
     
     match rest.get(0).map(|s| *s) {
         Some("text") => {
@@ -612,6 +612,13 @@ fn parse_get(rest: &[&str], id: &str) -> Result<Value, ParseError> {
                 usage: "get html <selector>",
             })?;
             Ok(json!({ "id": id, "action": "innerhtml", "selector": sel }))
+        }
+        Some("outerhtml") => {
+            let sel = rest.get(1).ok_or_else(|| ParseError::MissingArguments {
+                context: "get outerhtml".to_string(),
+                usage: "get outerhtml <selector>",
+            })?;
+            Ok(json!({ "id": id, "action": "outerhtml", "selector": sel }))
         }
         Some("value") => {
             let sel = rest.get(1).ok_or_else(|| ParseError::MissingArguments {

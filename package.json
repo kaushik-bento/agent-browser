@@ -1,6 +1,6 @@
 {
-  "name": "agent-browser",
-  "version": "0.6.0",
+  "name": "@anthropic-bento/agent-browser",
+  "version": "0.6.1",
   "description": "Headless browser automation CLI for AI agents",
   "type": "module",
   "main": "dist/daemon.js",

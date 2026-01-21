@@ -426,6 +426,11 @@ const innerHtmlSchema = baseCommandSchema.extend({
   selector: z.string().min(1),
 });
 
+const outerHtmlSchema = baseCommandSchema.extend({
+  action: z.literal('outerhtml'),
+  selector: z.string().min(1),
+});
+
 const inputValueSchema = baseCommandSchema.extend({
   action: z.literal('inputvalue'),
   selector: z.string().min(1),
@@ -849,6 +854,7 @@ const commandSchema = z.discriminatedUnion('action', [
   selectAllSchema,
   innerTextSchema,
   innerHtmlSchema,
+  outerHtmlSchema,
   inputValueSchema,
   setValueSchema,
   dispatchSchema,

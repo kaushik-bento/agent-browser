@@ -1270,7 +1270,7 @@ Navigation:
   reload                     Reload page
 
 Get Info:  agent-browser get <what> [selector]
-  text, html, value, attr <name>, title, url, count, box, styles
+  text, html, outerhtml, value, attr <name>, title, url, count, box, styles
 
 Check State:  agent-browser is <what> <selector>
   visible, enabled, checked
